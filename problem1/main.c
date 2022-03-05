@@ -57,7 +57,32 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
+    arrOut->pdata = malloc(20);
+    int posicion = 0, bool = 0;
+
+    for (int i = 0; i < arrIn1->size; i++)
+    {
+        for (int j = 0; j < arrIn2->size; j++)
+        {
+            if (*(arrIn1->pdata + i) == *(arrIn2->pdata + i))
+            {
+                for (int k = 0; k < posicion; k++)
+                {
+                    if(*(arrOut->pdata + k) == *(arrIn1->pdata + i)) bool = 1;
+                }
+                if(bool != 1)
+                {
+                    *(arrOut->pdata + posicion) = *(arrIn1->pdata + i);
+                    posicion++;
+                }
+                bool = 0;
+            }
+            
+        }
+        
+    }
     
+    arrOut->size = posicion;
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)

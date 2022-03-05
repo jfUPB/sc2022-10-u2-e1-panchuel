@@ -48,9 +48,8 @@ void getArray(struct array *parr)
         {
             if (fgets(entrada2,5,stdin)!= NULL)
             {
-                int cambio2 = sscanf(entrada2, "%d", parr->pdata + 1);
-            }
-            
+                int cambio2 = sscanf(entrada2, "%d", parr->pdata + i);
+            }           
         }
         
     }

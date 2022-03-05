@@ -64,15 +64,15 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     {
         for (int j = 0; j < arrIn2->size; j++)
         {
-            if (*(arrIn1->pdata + i) == *(arrIn2->pdata + i))
+            if (*(arrIn1->pdata + i) == *(arrIn2->pdata + j))
             {
                 for (int k = 0; k < posicion; k++)
                 {
-                    if(*(arrOut->pdata + k) == *(arrIn1->pdata + i)) bool = 1;
+                    if(*(arrOut->pdata + k) == *(arrIn2->pdata + j)) bool = 1;
                 }
                 if(bool != 1)
                 {
-                    *(arrOut->pdata + posicion) = *(arrIn1->pdata + i);
+                    *(arrOut->pdata + posicion) = *(arrIn2->pdata + j);
                     posicion++;
                 }
                 bool = 0;
